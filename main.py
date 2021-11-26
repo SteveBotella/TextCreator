@@ -10,18 +10,18 @@ def main():
         text_check = input("Choose action : create, add, read or quit")
         if text_check == "create":
             create_text = input("Your text : ")
-            file = open("text.txt", "w")
-            file.write(f"{create_text} \n")
-            file.close()
+            with open('text.txt', 'w') as file:
+                file.write(f"{create_text} \n")
+                file.close()
         if text_check == "add":
             add_text = input("Your text : ")
-            file = open("text.txt", "a")
-            file.write(add_text + "\n")
-            file.close()
+            with open('text.txt', 'a') as file:
+                file.write(add_text + "\n")
+                file.close()
         if text_check == "read":
-            file = open("text.txt", "r")
-            read = file.readlines()
-            file.close()
+            with open('text.txt', 'r') as file:
+                read = file.readlines()
+                file.close()
             line_number = -1
             input_next = True
             while input_next:
